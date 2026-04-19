@@ -1,0 +1,115 @@
+/* src/styles/sidebar.css */
+
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 10;
+}
+
+.sidebar-header {
+  padding: 20px 16px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-logo {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-orange);
+  letter-spacing: 0.08em;
+}
+
+.sidebar-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.sidebar-section-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding: 16px 16px 8px;
+  text-transform: uppercase;
+}
+
+.sidebar-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 12px;
+}
+
+.node-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid transparent;
+  cursor: grab;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  background: var(--bg-raised);
+  user-select: none;
+}
+.node-chip:hover {
+  transform: translateX(3px);
+  border-color: var(--border-subtle);
+}
+.node-chip:active { cursor: grabbing; transform: scale(0.97); }
+
+.chip-start:hover     { border-color: var(--node-start); background: rgba(34,197,94,0.08); }
+.chip-task:hover      { border-color: var(--node-task);  background: rgba(59,130,246,0.08); }
+.chip-approval:hover  { border-color: var(--node-approval); background: rgba(168,85,247,0.08); }
+.chip-automated:hover { border-color: var(--node-automated); background: rgba(249,115,22,0.08); }
+.chip-end:hover       { border-color: var(--node-end);   background: rgba(239,68,68,0.08); }
+
+.chip-icon {
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.chip-start .chip-icon    { color: var(--node-start); }
+.chip-task .chip-icon     { color: var(--node-task); }
+.chip-approval .chip-icon { color: var(--node-approval); }
+.chip-automated .chip-icon{ color: var(--node-automated); }
+.chip-end .chip-icon      { color: var(--node-end); }
+
+.chip-text { min-width: 0; }
+
+.chip-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.chip-desc {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.sidebar-instructions {
+  padding: 4px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.instruction-item {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
