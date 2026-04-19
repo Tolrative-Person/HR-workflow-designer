@@ -7,13 +7,13 @@ export interface KeyValuePair {
   value: string;
 }
 
-export interface StartNodeData {
+export interface StartNodeData extends Record<string, unknown> {
   type: 'start';
   title: string;
   metadata: KeyValuePair[];
 }
 
-export interface TaskNodeData {
+export interface TaskNodeData extends Record<string, unknown> {
   type: 'task';
   title: string;
   description: string;
@@ -22,21 +22,21 @@ export interface TaskNodeData {
   customFields: KeyValuePair[];
 }
 
-export interface ApprovalNodeData {
+export interface ApprovalNodeData extends Record<string, unknown> {
   type: 'approval';
   title: string;
   approverRole: 'Manager' | 'HRBP' | 'Director' | string;
   autoApproveThreshold: number;
 }
 
-export interface AutomatedNodeData {
+export interface AutomatedNodeData extends Record<string, unknown> {
   type: 'automated';
   title: string;
   actionId: string;
   actionParams: Record<string, string>;
 }
 
-export interface EndNodeData {
+export interface EndNodeData extends Record<string, unknown> {
   type: 'end';
   endMessage: string;
 }
